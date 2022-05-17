@@ -6,7 +6,11 @@
 
     <groupId>com.barlo</groupId>
     <artifactId>Aira</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>config-server</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
