@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: project-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      authentication: TOKEN
+      token:
+      application-name: project-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
