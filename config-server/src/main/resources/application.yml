@@ -5,7 +5,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/barlo921/aira/services-configs
+          uri: https://github.com/barlo921/aira.git
+          search-paths: 'services-configs/'
           username:
           password:
           clone-on-start: true
