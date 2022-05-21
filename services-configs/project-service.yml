@@ -8,6 +8,9 @@ eureka:
     instanceId: ${spring.application.name}:${random.uuid}
 
 spring:
+  config:
+    activate:
+      on-profile: prod
   jpa:
     properties:
       hibernate:
@@ -16,3 +19,16 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: 'true'
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:h2:mem:test
+    username: admin
+    password: password
+    driver-class-name: org.h2.Driver
+    data: classpath:db/populateH2.sql
