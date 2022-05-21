@@ -10,7 +10,7 @@ eureka:
 spring:
   config:
     activate:
-      on-profile: prod
+      on-profile: ${activatedProperties}
   jpa:
     properties:
       hibernate:
@@ -25,7 +25,7 @@ spring:
 spring:
   config:
     activate:
-      on-profile: test
+      on-profile: ${activatedProperties}
   datasource:
     url: jdbc:h2:mem:test
     username: admin
