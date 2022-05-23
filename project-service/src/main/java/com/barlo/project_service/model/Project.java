@@ -19,7 +19,8 @@ public class Project {
     @Id
     @SequenceGenerator(
             name = "project_id_sequence",
-            sequenceName = "project_id_sequence"
+            sequenceName = "project_id_sequence",
+            allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,

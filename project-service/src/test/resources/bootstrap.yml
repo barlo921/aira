@@ -1,0 +1,11 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+  cloud:
+    config:
+      enabled: false
+    vault:
+      enabled: false
+    discovery:
+      enabled: false

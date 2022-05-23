@@ -51,7 +51,7 @@ public class ProjectController {
     @GetMapping
     public ResponseEntity<List<ProjectDTO>> getAll() {
         log.info("Get all projects");
-        return new ResponseEntity<>(service.get(), HttpStatus.OK);
+        return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
     }
 
     @PostMapping("/add/task/{id}")

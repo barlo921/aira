@@ -8,6 +8,7 @@ import com.barlo.project_service.model.dto.ProjectMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,14 +18,15 @@ public class ProjectService {
 
     private ProjectRepository repository;
 
-    public void createProject(ProjectDTO projectDTO) {
+    public Project createProject(ProjectDTO projectDTO) {
 
         Project project = Project.builder()
                 .name(projectDTO.getName())
                 .status(Status.ACTIVE)
+                .tasks(new HashSet<Long>())
                 .build();
 
-        repository.save(project);
+        return repository.save(project);
     }
 
     public void deleteProject(ProjectDTO projectDTO) {
@@ -46,12 +48,12 @@ public class ProjectService {
 
     public ProjectDTO getById(Long id) {
         Project project = checkProjectNotFound(id);
-        return ProjectMapper.map(project);
+        return ProjectMapper.mapAllFields(project);
     }
 
-    public List<ProjectDTO> get() {
+    public List<ProjectDTO> getAll() {
         return repository.findAll().stream()
-                .map(ProjectMapper::map)
+                .map(ProjectMapper::mapAllFields)
                 .collect(Collectors.toList());
     }
 
