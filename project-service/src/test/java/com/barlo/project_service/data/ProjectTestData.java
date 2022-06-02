@@ -2,6 +2,8 @@ package com.barlo.project_service.data;
 
 import com.barlo.project_service.model.Status;
 import com.barlo.project_service.model.dto.ProjectDTO;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -58,6 +60,12 @@ public class ProjectTestData {
                 .status(Status.ACTIVE)
                 .tasks(Stream.of(3L).collect(Collectors.toSet()))
                 .build();
+    }
+
+    public static ResponseEntity<ProjectDTO> getDeletedResponseEntity() {
+        ProjectDTO projectDTO = getDeleted();
+        projectDTO.setId(1L);
+        return new ResponseEntity<ProjectDTO>(projectDTO, HttpStatus.OK);
     }
 
 }

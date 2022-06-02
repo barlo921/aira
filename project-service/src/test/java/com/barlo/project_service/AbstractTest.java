@@ -7,9 +7,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 
 
-@SpringBootTest
 @ActiveProfiles("test")
-@Sql(scripts = "classpath:db/populateH2.sql")
 @ExtendWith(TestResults.class)
 public abstract class AbstractTest {
 }

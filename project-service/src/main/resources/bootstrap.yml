@@ -9,7 +9,7 @@ spring:
       port: 8200
       scheme: http
       authentication: TOKEN
-      token:
+      token: hvs.8dLL4XCHkyieADAg6OBlnDbT
       application-name: project-service
   rabbitmq:
     host: localhost

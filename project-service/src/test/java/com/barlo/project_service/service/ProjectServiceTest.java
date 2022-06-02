@@ -9,10 +9,14 @@ import com.barlo.project_service.model.dto.ProjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.transaction.annotation.Transactional;
 
 import static com.barlo.project_service.data.ProjectTestData.*;
 
+@SpringBootTest
+@Sql(scripts = "classpath:db/populateH2.sql")
 class ProjectServiceTest extends AbstractTest {
 
     @Autowired
